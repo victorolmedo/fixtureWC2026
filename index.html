@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>World Cup 2026 · Group Stage · Interactive Fixture</title>
   <style>
-    /* ----- MODERN FONT SYSTEM (better readability, premium feel) ----- */
+    /* ----- MODERN FONT SYSTEM ----- */
     @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap');
 
     * {
@@ -17,35 +17,28 @@
     body {
       background: #f1f5f9;
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
-      padding: 24px 20px;
+      padding: 20px;
       color: #0a1c2f;
     }
 
-    /* refined design tokens */
+    /* design tokens */
     :root {
       --color-primary: #0d2444;
       --color-gold: #c9a227;
-      --color-gold-dark: #a0781c;
       --color-bg-card: #ffffff;
-      --color-border-light: #e2e8f0;
-      --color-text-main: #0f172a;
-      --color-text-muted: #475569;
-      --border-radius-card: 20px;
-      --border-radius-md: 14px;
       --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.05);
     }
 
-    /* main container */
     .wrapper {
       max-width: 1400px;
       margin: 0 auto;
     }
 
-    /* header area — refined */
+    /* header */
     .header {
       background: var(--color-primary);
-      padding: 18px 28px;
-      border-radius: 28px 28px 20px 20px;
+      padding: 16px 24px;
+      border-radius: 24px 24px 20px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -57,7 +50,7 @@
     .header-left {
       display: flex;
       align-items: baseline;
-      gap: 18px;
+      gap: 16px;
       flex-wrap: wrap;
     }
 
@@ -67,17 +60,17 @@
     }
 
     .header-sub {
-      font-size: 12px;
+      font-size: 11px;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: #c9a227;
       font-weight: 500;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .header-title {
       color: white;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
       letter-spacing: -0.3px;
     }
@@ -85,17 +78,15 @@
     .badge {
       background: #c9a227;
       color: #0d2444;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
-      padding: 5px 14px;
+      padding: 4px 12px;
       border-radius: 60px;
-      letter-spacing: 0.3px;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.1);
     }
 
     .header-right {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       align-items: center;
       flex-wrap: wrap;
     }
@@ -103,18 +94,16 @@
     .name-wrap {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       background: rgba(255,255,255,0.08);
-      padding: 4px 12px 4px 16px;
+      padding: 3px 10px 3px 14px;
       border-radius: 60px;
-      backdrop-filter: blur(2px);
     }
 
     .name-label {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 500;
       color: #b9cef0;
-      letter-spacing: 0.2px;
     }
 
     .name-input {
@@ -122,36 +111,33 @@
       border: 1px solid rgba(255,255,255,0.25);
       border-radius: 40px;
       color: white;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 500;
-      padding: 8px 14px;
-      width: 170px;
+      padding: 6px 12px;
+      width: 150px;
       outline: none;
       font-family: 'Inter', monospace;
-      transition: all 0.2s;
     }
 
     .name-input:focus {
       border-color: #c9a227;
       background: rgba(255,255,255,0.22);
-      box-shadow: 0 0 0 2px rgba(201,162,39,0.3);
     }
 
     .print-btn {
       background: #c9a227;
       border: none;
       border-radius: 40px;
-      padding: 8px 18px;
-      font-size: 13px;
+      padding: 6px 16px;
+      font-size: 12px;
       font-weight: 600;
       font-family: 'Inter', sans-serif;
       color: #0d2444;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       cursor: pointer;
       transition: 0.15s;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
 
     .print-btn:hover {
@@ -162,112 +148,102 @@
     .owner-name {
       color: #c9a227;
       font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 0.2px;
+      font-size: 13px;
     }
 
-    /* container + groups */
+    /* container */
     .container {
       background: white;
-      margin-top: 18px;
-      border-radius: 28px;
+      margin-top: 16px;
+      border-radius: 24px;
       box-shadow: var(--shadow-sm);
-      padding: 18px 20px 24px 20px;
+      padding: 16px 18px 20px 18px;
       border: 1px solid #eef2f8;
     }
 
     .controls {
       display: flex;
       align-items: center;
-      gap: 14px;
-      margin-bottom: 22px;
+      gap: 12px;
+      margin-bottom: 18px;
       flex-wrap: wrap;
     }
 
     .controls label {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 500;
       color: #334155;
     }
 
     .filter-btns {
       display: flex;
-      gap: 8px;
+      gap: 6px;
       flex-wrap: wrap;
     }
 
     .filter-btn {
       font-family: 'Inter', monospace;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
-      padding: 6px 14px;
+      padding: 5px 12px;
       border-radius: 40px;
       border: 1px solid #cbd5e1;
       background: white;
       color: #1e293b;
       cursor: pointer;
       transition: all 0.15s;
-      letter-spacing: -0.2px;
     }
 
     .filter-btn.active, .filter-btn:hover {
       background: #0d2444;
       border-color: #0d2444;
       color: white;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
 
     .groups-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
     }
 
-    /* elegant group cards */
+    /* group cards */
     .group-card {
       background: var(--color-bg-card);
-      border-radius: 20px;
+      border-radius: 18px;
       border: 1px solid #eef2f8;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-      transition: box-shadow 0.2s;
-    }
-
-    .group-card:hover {
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
     }
 
     .group-header {
       background: linear-gradient(105deg, #0f2a48 0%, #0a1c32 100%);
       color: white;
-      padding: 12px 16px;
-      font-size: 15px;
+      padding: 10px 14px;
+      font-size: 13px;
       font-weight: 700;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      letter-spacing: -0.2px;
     }
 
     .group-teams {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 400;
       background: rgba(255,255,255,0.12);
-      padding: 4px 10px;
+      padding: 3px 8px;
       border-radius: 40px;
       display: flex;
-      gap: 6px;
+      gap: 5px;
     }
 
-    /* match row — cleaner spacing */
+    /* match row */
     .match-row {
       display: grid;
-      grid-template-columns: 52px 1fr auto 1fr;
+      grid-template-columns: 48px 1fr auto 1fr;
       align-items: center;
-      padding: 10px 12px;
+      padding: 8px 10px;
       border-bottom: 1px solid #f0f2f5;
-      gap: 8px;
-      transition: background 0.1s;
+      gap: 6px;
     }
 
     .match-row:last-child {
@@ -275,29 +251,28 @@
     }
 
     .match-date {
-      font-size: 10px;
+      font-size: 9px;
       font-weight: 600;
       color: #5b6e8c;
       line-height: 1.3;
     }
 
     .round-pill {
-      font-size: 9px;
+      font-size: 8px;
       font-weight: 600;
       background: #eef2ff;
       color: #2c3e66;
-      padding: 2px 8px;
+      padding: 1px 6px;
       border-radius: 30px;
       display: inline-block;
-      margin-top: 4px;
-      letter-spacing: -0.2px;
+      margin-top: 3px;
     }
 
     .team {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 12px;
+      gap: 6px;
+      font-size: 11px;
       font-weight: 500;
       color: #0a2540;
     }
@@ -307,42 +282,40 @@
     }
 
     .team-flag {
-      font-size: 18px;
+      font-size: 16px;
       line-height: 1;
     }
 
     .team-icon {
-      width: 22px;
-      height: 22px;
+      width: 20px;
+      height: 20px;
       border-radius: 40px;
       object-fit: cover;
       background: #f8fafc;
       border: 1px solid #e2e8f0;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
     }
 
     .score-area {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
       background: #fcfcfd;
-      padding: 2px 6px;
-      border-radius: 32px;
+      padding: 2px 5px;
+      border-radius: 28px;
     }
 
     .score-input {
-      width: 34px;
-      height: 32px;
+      width: 30px;
+      height: 28px;
       text-align: center;
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 700;
       font-family: 'Inter', monospace;
       border: 1px solid #cfdfed;
-      border-radius: 12px;
+      border-radius: 10px;
       background: white;
       color: #0b2b44;
       padding: 0;
-      transition: 0.1s;
     }
 
     .score-input:focus {
@@ -352,7 +325,7 @@
     }
 
     .score-sep {
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 700;
       color: #334155;
     }
@@ -360,86 +333,186 @@
     .winner {
       font-weight: 800 !important;
       color: #0a6b2f !important;
-      text-shadow: 0 0 0.2px #b0e0b0;
     }
 
     .loser {
       opacity: 0.55;
-      filter: grayscale(0.02);
     }
 
-    /* print styles — premium */
+    /* ========== FIXED PRINT STYLES - PROPER PDF SCALING ========== */
     @media print {
+      /* Reset everything for clean print */
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      
       body {
         background: white;
-        padding: 0.2in;
+        padding: 0;
         margin: 0;
-        font-family: 'Inter', 'Segoe UI', sans-serif;
+        font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+        font-size: 8pt;
       }
+      
+      .wrapper {
+        max-width: 100%;
+        margin: 0;
+        padding: 0.1in;
+      }
+      
+      /* Hide interactive elements */
       .no-print {
         display: none !important;
       }
+      
+      /* Header print styles - compact */
       .header {
         background: #0d2444 !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
         border-radius: 0;
-        padding: 12px 16px;
+        padding: 6px 10px;
+        margin-bottom: 6px;
       }
+      
+      .header-title {
+        font-size: 12pt;
+      }
+      
+      .badge {
+        font-size: 7pt;
+        padding: 2px 6px;
+      }
+      
+      .header-sub {
+        font-size: 8pt;
+      }
+      
+      /* Container no extra spacing */
       .container {
+        background: white;
         box-shadow: none;
-        border: 1px solid #ccc;
-        padding: 10px;
-        margin-top: 12px;
+        border: none;
+        padding: 0;
+        margin-top: 4px;
       }
+      
+      /* Force 3 columns for PDF - fit all groups */
+      .groups-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 8px !important;
+      }
+      
+      /* Group cards - prevent page breaks inside */
       .group-card {
         break-inside: avoid;
-        border: 1px solid #aaa;
-        box-shadow: none;
+        page-break-inside: avoid;
+        border: 0.5px solid #aaa !important;
+        border-radius: 4px;
+        margin-bottom: 0;
       }
+      
+      .group-header {
+        background: #1a3a6b !important;
+        padding: 5px 8px;
+        font-size: 9pt;
+      }
+      
+      .group-teams {
+        font-size: 7pt;
+      }
+      
+      /* Match rows compact but readable */
+      .match-row {
+        display: grid;
+        grid-template-columns: 38px 1fr auto 1fr;
+        gap: 3px;
+        padding: 4px 5px;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      
+      .match-date {
+        font-size: 7pt;
+      }
+      
+      .round-pill {
+        font-size: 6pt;
+        margin-top: 2px;
+        padding: 1px 4px;
+      }
+      
+      .team {
+        font-size: 8pt;
+        gap: 3px;
+      }
+      
+      .team-icon {
+        width: 14px;
+        height: 14px;
+      }
+      
+      .team-flag {
+        font-size: 12px;
+      }
+      
+      .score-area {
+        padding: 0 2px;
+        gap: 2px;
+      }
+      
       .score-input {
-        border: 1px solid #222;
-        background: #fff !important;
-        -webkit-print-color-adjust: exact;
+        width: 24px;
+        height: 22px;
+        font-size: 9pt;
+        border: 0.5px solid #999 !important;
+        background: white !important;
       }
-      .groups-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 12px;
+      
+      .score-sep {
+        font-size: 9pt;
       }
+      
+      /* Owner name visible in print */
       .owner-name {
         color: #c9a227 !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
       }
-      .group-header {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-        background: #1a3a6b;
+      
+      #printOwner {
+        display: flex !important;
+        width: auto;
+        margin-top: 3px;
       }
-      .match-row {
-        break-inside: avoid;
+      
+      /* Ensure all content fits - scale down if needed */
+      @page {
+        size: auto;
+        margin: 0.4in;
       }
     }
-
-    /* subtle responsive */
-    @media (max-width: 680px) {
-      body {
-        padding: 16px;
+    
+    /* Responsive for screen */
+    @media (max-width: 900px) {
+      .groups-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       }
-      .header {
-        padding: 14px 18px;
+    }
+    
+    @media (max-width: 640px) {
+      body {
+        padding: 12px;
       }
       .match-row {
-        grid-template-columns: 44px 1fr auto 1fr;
-        gap: 5px;
+        grid-template-columns: 42px 1fr auto 1fr;
+        gap: 4px;
       }
       .team {
         font-size: 10px;
       }
       .score-input {
         width: 28px;
-        height: 28px;
-        font-size: 12px;
+        height: 26px;
+        font-size: 11px;
       }
     }
   </style>
@@ -460,11 +533,11 @@
         <input class="name-input" id="nameInput" type="text" maxlength="32" placeholder="Ej: Juan Pérez" oninput="updateName(this.value)" />
       </div>
       <button class="print-btn" onclick="window.print()">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-        Imprimir
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Imprimir / PDF
       </button>
     </div>
-    <div id="printOwner" style="display:none; width:100%; margin-top: 6px;">
+    <div id="printOwner" style="display:none; width:100%; margin-top: 4px;">
       <span class="name-label" style="color:#b9cef0;">Fixture de:</span>
       <span class="owner-name" id="printOwnerName"></span>
     </div>
@@ -472,9 +545,9 @@
 
   <div class="container">
     <div class="controls no-print">
-      <label>⚡ Grupo:</label>
+      <label>📋 Grupo:</label>
       <div class="filter-btns" id="filterBtns">
-        <button class="filter-btn active" onclick="filterGroup('ALL')">Todos</button>
+        <button class="filter-btn active" data-g="ALL" onclick="filterGroup('ALL')">Todos</button>
       </div>
     </div>
     <div class="groups-grid" id="groupsGrid"></div>
@@ -482,7 +555,7 @@
 </div>
 
 <script>
-  // ======================== DATA (flags, iso, matches) ========================
+  // ======================== DATA ========================
   const FLAG = {
     'México':'🇲🇽','Sudáfrica':'🇿🇦','Corea del Sur':'🇰🇷','Chequia':'🇨🇿',
     'Canadá':'🇨🇦','Bosnia-Herz.':'🇧🇦','Qatar':'🇶🇦','Suiza':'🇨🇭',
@@ -564,21 +637,22 @@
 
   function key(m) { return `${m.g}-${m.h}-${m.a}`; }
 
-  // lightweight local storage mock (preserves data)
-  async function saveAll() {
+  function saveAll() {
     try {
-      localStorage.setItem('wc2026_fixture', JSON.stringify({scores, ownerName}));
+      localStorage.setItem('wc2026_fixture_v2', JSON.stringify({scores, ownerName}));
     } catch(e) {}
   }
-  async function loadAll() {
+  
+  function loadAll() {
     try {
-      const raw = localStorage.getItem('wc2026_fixture');
+      const raw = localStorage.getItem('wc2026_fixture_v2');
       if(raw) {
         const data = JSON.parse(raw);
         if(data.scores) Object.assign(scores, data.scores);
         if(data.ownerName) {
           ownerName = data.ownerName;
-          document.getElementById('nameInput').value = ownerName;
+          const nameInput = document.getElementById('nameInput');
+          if(nameInput) nameInput.value = ownerName;
           updateNameDisplay(ownerName);
         }
       }
@@ -590,11 +664,16 @@
     updateNameDisplay(ownerName);
     saveAll();
   }
+  
   function updateNameDisplay(name) {
     const po = document.getElementById('printOwner');
     const pon = document.getElementById('printOwnerName');
-    if(name) { po.style.display = 'flex'; pon.textContent = name; }
-    else { po.style.display = 'none'; }
+    if(name && name.length > 0) { 
+      po.style.display = 'flex'; 
+      pon.textContent = name; 
+    } else { 
+      po.style.display = 'none'; 
+    }
   }
 
   function scoreChanged(k, side, val) {
@@ -624,8 +703,7 @@
     if(!grid) return;
     grid.innerHTML = '';
     const toShow = activeFilter === 'ALL' ? groups : [activeFilter];
-    grid.style.gridTemplateColumns = activeFilter === 'ALL' ? 'repeat(auto-fit, minmax(310px, 1fr))' : '1fr';
-
+    
     toShow.forEach(grp => {
       const card = document.createElement('div');
       card.className = 'group-card';
@@ -669,11 +747,10 @@
     });
   }
 
-  async function init() {
+  // Initialize
+  function init() {
     const filterContainer = document.getElementById('filterBtns');
     const groupsList = ['A','B','C','D','E','F','G','H','I','J','K','L'];
-    const allBtn = filterContainer.querySelector('.filter-btn');
-    if(allBtn) allBtn.dataset.g = 'ALL';
     groupsList.forEach(g => {
       const btn = document.createElement('button');
       btn.className = 'filter-btn';
@@ -682,9 +759,10 @@
       btn.onclick = () => filterGroup(g);
       filterContainer.appendChild(btn);
     });
-    await loadAll();
+    loadAll();
     renderAll();
   }
+  
   init();
 </script>
 </body>
